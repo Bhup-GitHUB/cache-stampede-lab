@@ -24,7 +24,7 @@ def main():
     panels = [
         ("PostgreSQL query starts / second", [("db_qps", "DB QPS", "#b33e30")]),
         ("Endpoint p99 latency (ms)", [("p99_ms", "HTTP p99", "#6247aa")]),
-        ("Request failures / second", [("errors", "HTTP / transport errors", "#b33e30"), ("timeouts", "Timeouts (subset)", "#e39122"), ("dropped", "Generator drops", "#111827")]),
+        ("Request failures / second", [("errors", "HTTP / transport errors", "#b33e30"), ("timeouts", "Client timeouts (subset)", "#e39122"), ("dropped", "Generator drops", "#111827")]),
         ("Request rate / second", [("offered", "Offered", "#2167a5"), ("dispatched", "Dispatched", "#dc8f28"), ("completed", "Completed", "#29946b")]),
     ]
     for index, (title, lines) in enumerate(panels):
