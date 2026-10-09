@@ -9,10 +9,12 @@ import shutil
 import subprocess
 import time
 import urllib.request
+import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 COMPOSE = ["docker-compose"] if shutil.which("docker-compose") else ["docker", "compose"]
 BASE = "http://127.0.0.1:18080"
+ADMIN_IN_DOCKER = False
 METRICS = ",".join(f"http://127.0.0.1:{p}/metrics" for p in (18081, 18082, 18083))
 
 
@@ -29,6 +31,10 @@ def redis(*args):
 
 
 def get(url):
+    if ADMIN_IN_DOCKER:
+        parsed = urllib.parse.urlsplit(url)
+        host = {18080: "lb", 18081: "app1", 18082: "app2", 18083: "app3"}[parsed.port]
+        return compose("exec", "-T", "lb", "wget", "-q", "-T", "6", "-O", "-", f"http://{host}:8080{parsed.path}")
     with urllib.request.urlopen(url, timeout=6) as response:
         return response.read().decode()
 
@@ -165,6 +171,8 @@ def main():
     parser.add_argument("--max-db-conns", type=int, default=16)
     parser.add_argument("--max-concurrent-db", type=int, default=32)
     args = parser.parse_args()
+    global ADMIN_IN_DOCKER
+    ADMIN_IN_DOCKER = args.docker_loadgen
     if args.duration <= args.delete_at or args.delete_at < 0 or args.repeats < 1:
         parser.error("duration must exceed delete-at, and repeats must be positive")
     out = pathlib.Path(args.output).resolve()
