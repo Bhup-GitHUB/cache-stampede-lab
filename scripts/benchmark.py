@@ -136,6 +136,8 @@ def run(args, directory, mode, scenario="hot", **overrides):
         chart += ["--deletion-second", str(events[0]["second"])]
     if scenario == "redis-unavailable":
         chart += ["--event-label", "Redis stopped"]
+    if scenario == "owner-killed":
+        chart += ["--secondary-event-second", str(events[1]["second"])]
     command(chart)
     print(directory.name, json.dumps(summary), flush=True)
 

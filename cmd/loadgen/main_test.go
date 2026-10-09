@@ -1,12 +1,17 @@
 package main
 
 import (
+	"encoding/csv"
 	"encoding/json"
 	"flag"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"strconv"
+	"strings"
+	"sync/atomic"
 	"testing"
 	"time"
 )
@@ -71,5 +76,66 @@ func TestBodyTimeoutCounted(t *testing.T) {
 	}
 	if summary.Errors != 1 || summary.Timeouts != 1 {
 		t.Fatalf("body timeout not recorded: %+v", summary)
+	}
+}
+
+func TestMetricsBaselinePrecedesTraffic(t *testing.T) {
+	var reads, baselineFinished atomic.Int64
+	var early atomic.Bool
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == "/metrics" {
+			time.Sleep(20 * time.Millisecond)
+			fmt.Fprintf(w, "stampede_db_query_starts_total %d\n", reads.Load())
+			baselineFinished.Add(1)
+			return
+		}
+		if baselineFinished.Load() < 3 {
+			early.Store(true)
+		}
+		reads.Add(1)
+		w.WriteHeader(http.StatusOK)
+	}))
+	defer server.Close()
+	previousFlags, previousArgs := flag.CommandLine, os.Args
+	defer func() { flag.CommandLine, os.Args = previousFlags, previousArgs }()
+	flag.CommandLine = flag.NewFlagSet("loadgen", flag.ContinueOnError)
+	output := t.TempDir()
+	metrics := strings.Join([]string{server.URL + "/metrics", server.URL + "/metrics", server.URL + "/metrics"}, ",")
+	os.Args = []string{"loadgen", "-url", server.URL, "-rate", "20", "-duration", "100ms", "-metrics-urls", metrics, "-output", output}
+	if err := run(); err != nil {
+		t.Fatal(err)
+	}
+	if early.Load() {
+		t.Fatal("offered traffic before all replica baselines completed")
+	}
+	f, err := os.Open(filepath.Join(output, "series.csv"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer f.Close()
+	rows, err := csv.NewReader(f).ReadAll()
+	if err != nil {
+		t.Fatal(err)
+	}
+	var starts float64
+	for _, row := range rows[1:] {
+		if row[11] == "" {
+			continue
+		}
+		value, err := strconv.ParseFloat(row[11], 64)
+		if err != nil {
+			t.Fatal(err)
+		}
+		starts += value
+	}
+	if starts != float64(reads.Load()*3) {
+		t.Fatalf("initial query starts omitted: got %v, expected %d", starts, reads.Load()*3)
+	}
+	data, err := os.ReadFile(filepath.Join(output, "metrics-0000.prom"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(data), "# sample_seconds 0.000000000") || !strings.Contains(string(data), "# scrape_started_at ") {
+		t.Fatal("baseline timestamps missing")
 	}
 }

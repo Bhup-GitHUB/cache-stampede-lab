@@ -9,6 +9,8 @@ def main():
     parser.add_argument("--input", required=True, type=Path)
     parser.add_argument("--deletion-second", type=float)
     parser.add_argument("--event-label", default="Cache deletion")
+    parser.add_argument("--secondary-event-second", type=float)
+    parser.add_argument("--secondary-event-label", default="Owner killed")
     parser.add_argument("--title", default="Measured cache stampede experiment")
     args = parser.parse_args()
     with (args.input / "series.csv").open() as source:
@@ -40,7 +42,7 @@ def main():
         for line_index, (key, label, color) in enumerate(lines):
             segments, points = [], []
             for row in rows:
-                if row[key] == "":
+                if row[key] == "" or (key == "p99_ms" and int(row["completed"]) == 0):
                     if points:
                         segments.append(points)
                     points = []
@@ -53,9 +55,11 @@ def main():
             for segment in segments:
                 parts.append(f'<polyline points="{" ".join(segment)}" stroke="{color}" stroke-width="2" fill="none"/>')
             parts.append(f'<text x="{left + line_index * 255}" y="{bottom + 40}" fill="{color}">{label}</text>')
-        if args.deletion_second is not None:
-            x = left + args.deletion_second / xmax * (right - left)
-            parts.append(f'<path d="M {x} {ytop} V {bottom}" stroke="#111827" stroke-dasharray="5 4"/><text x="{x + 5}" y="{ytop + 15}">{html.escape(args.event_label)}</text>')
+        for marker_index, (event_second, event_label) in enumerate([(args.deletion_second, args.event_label), (args.secondary_event_second, args.secondary_event_label)]):
+            if event_second is None:
+                continue
+            x = left + event_second / xmax * (right - left)
+            parts.append(f'<path d="M {x} {ytop} V {bottom}" stroke="#111827" stroke-dasharray="5 4"/><text x="{x + 5}" y="{ytop + 15 + marker_index * 17}">{html.escape(event_label)}</text>')
     parts.extend(['<text x="550" y="1080" text-anchor="middle">Seconds since load generator start · Missing DB samples are gaps</text>', '</g></svg>'])
     destination = args.input / "charts.svg"
     destination.write_text("\n".join(parts))

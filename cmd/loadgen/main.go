@@ -79,6 +79,13 @@ func run() error {
 	transport := &http.Transport{MaxIdleConns: *maxInflight, MaxIdleConnsPerHost: *maxInflight, MaxConnsPerHost: *maxInflight}
 	defer transport.CloseIdleConnections()
 	client := &http.Client{Timeout: *timeout, Transport: transport}
+	var baseline sample
+	if *metrics != "" {
+		baseline = scrapeSample(*metrics, *dbMetric, *output, 0, 0)
+		if !baseline.valid {
+			return fmt.Errorf("initial metrics scrape failed; see metrics-0000.prom")
+		}
+	}
 	start := time.Now()
 	results := make(chan result, *maxInflight)
 	slots := make(chan struct{}, *maxInflight)
@@ -125,7 +132,7 @@ func run() error {
 	}()
 	scrapeCtx, cancelScrape := context.WithCancel(context.Background())
 	scrapeDone := make(chan []sample, 1)
-	go func() { scrapeDone <- scrape(scrapeCtx, start, *metrics, *dbMetric, *output) }()
+	go func() { scrapeDone <- scrape(scrapeCtx, start, *metrics, *dbMetric, *output, baseline) }()
 	count := int(float64(*rate) * duration.Seconds())
 	for i := 0; i < count; i++ {
 		scheduled := time.Duration(float64(i) * float64(time.Second) / float64(*rate))
@@ -259,58 +266,16 @@ func run() error {
 	fmt.Println(string(data))
 	return nil
 }
-func scrape(ctx context.Context, start time.Time, urls, metric, output string) []sample {
+func scrape(ctx context.Context, start time.Time, urls, metric, output string, baseline sample) []sample {
 	if urls == "" {
 		return nil
 	}
-	client := &http.Client{Timeout: 700 * time.Millisecond}
 	ticker := time.NewTicker(time.Second)
 	defer ticker.Stop()
-	var samples []sample
+	samples := []sample{baseline}
 	collect := func() {
-		s := sample{second: time.Since(start).Seconds(), valid: true}
-		var raw strings.Builder
-		for _, url := range strings.Split(urls, ",") {
-			raw.WriteString("# replica " + url + "\n")
-			resp, err := client.Get(strings.TrimSpace(url))
-			if err != nil {
-				s.valid = false
-				raw.WriteString("# scrape_error " + err.Error() + "\n")
-				continue
-			}
-			data, err := io.ReadAll(resp.Body)
-			resp.Body.Close()
-			if err != nil || resp.StatusCode != 200 {
-				s.valid = false
-				continue
-			}
-			raw.Write(data)
-			found := false
-			for _, line := range strings.Split(string(data), "\n") {
-				fields := strings.Fields(line)
-				if len(fields) < 2 {
-					continue
-				}
-				name := strings.SplitN(fields[0], "{", 2)[0]
-				if name == metric {
-					value, e := strconv.ParseFloat(fields[1], 64)
-					if e == nil {
-						s.total += value
-						found = true
-					}
-				}
-			}
-			if !found {
-				s.valid = false
-			}
-		}
-		if err := os.WriteFile(filepath.Join(output, fmt.Sprintf("metrics-%04d.prom", len(samples))), []byte(raw.String()), 0644); err != nil {
-			fmt.Fprintln(os.Stderr, "write metrics:", err)
-			s.valid = false
-		}
-		samples = append(samples, s)
+		samples = append(samples, scrapeSample(urls, metric, output, len(samples), time.Since(start).Seconds()))
 	}
-	collect()
 	for {
 		select {
 		case <-ctx.Done():
@@ -320,4 +285,53 @@ func scrape(ctx context.Context, start time.Time, urls, metric, output string) [
 			collect()
 		}
 	}
+}
+
+func scrapeSample(urls, metric, output string, index int, second float64) sample {
+	client := &http.Client{Timeout: 700 * time.Millisecond}
+	s := sample{second: second, valid: true}
+	var raw strings.Builder
+	fmt.Fprintf(&raw, "# sample_seconds %.9f\n# scrape_started_at %s\n", second, time.Now().UTC().Format(time.RFC3339Nano))
+	for _, url := range strings.Split(urls, ",") {
+		fmt.Fprintf(&raw, "# replica %s\n# replica_scrape_started_at %s\n", url, time.Now().UTC().Format(time.RFC3339Nano))
+		resp, err := client.Get(strings.TrimSpace(url))
+		if err != nil {
+			s.valid = false
+			raw.WriteString("# scrape_error " + err.Error() + "\n")
+			continue
+		}
+		data, err := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		fmt.Fprintf(&raw, "# replica_scrape_finished_at %s\n", time.Now().UTC().Format(time.RFC3339Nano))
+		if err != nil || resp.StatusCode != http.StatusOK {
+			s.valid = false
+			fmt.Fprintf(&raw, "# scrape_error status=%d error=%v\n", resp.StatusCode, err)
+			continue
+		}
+		raw.Write(data)
+		found := false
+		for _, line := range strings.Split(string(data), "\n") {
+			fields := strings.Fields(line)
+			if len(fields) < 2 {
+				continue
+			}
+			name := strings.SplitN(fields[0], "{", 2)[0]
+			if name == metric {
+				value, err := strconv.ParseFloat(fields[1], 64)
+				if err == nil {
+					s.total += value
+					found = true
+				}
+			}
+		}
+		if !found {
+			s.valid = false
+		}
+	}
+	fmt.Fprintf(&raw, "# scrape_finished_at %s\n", time.Now().UTC().Format(time.RFC3339Nano))
+	if err := os.WriteFile(filepath.Join(output, fmt.Sprintf("metrics-%04d.prom", index)), []byte(raw.String()), 0644); err != nil {
+		fmt.Fprintln(os.Stderr, "write metrics:", err)
+		s.valid = false
+	}
+	return s
 }
