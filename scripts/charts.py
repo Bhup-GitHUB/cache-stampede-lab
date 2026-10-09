@@ -8,6 +8,7 @@ def main():
     parser = argparse.ArgumentParser(description="Chart measured load generator time series")
     parser.add_argument("--input", required=True, type=Path)
     parser.add_argument("--deletion-second", type=float)
+    parser.add_argument("--event-label", default="Cache deletion")
     parser.add_argument("--title", default="Measured cache stampede experiment")
     args = parser.parse_args()
     with (args.input / "series.csv").open() as source:
@@ -54,7 +55,7 @@ def main():
             parts.append(f'<text x="{left + line_index * 255}" y="{bottom + 40}" fill="{color}">{label}</text>')
         if args.deletion_second is not None:
             x = left + args.deletion_second / xmax * (right - left)
-            parts.append(f'<path d="M {x} {ytop} V {bottom}" stroke="#111827" stroke-dasharray="5 4"/><text x="{x + 5}" y="{ytop + 15}">Cache deletion</text>')
+            parts.append(f'<path d="M {x} {ytop} V {bottom}" stroke="#111827" stroke-dasharray="5 4"/><text x="{x + 5}" y="{ytop + 15}">{html.escape(args.event_label)}</text>')
     parts.extend(['<text x="550" y="1080" text-anchor="middle">Seconds since load generator start · Missing DB samples are gaps</text>', '</g></svg>'])
     destination = args.input / "charts.svg"
     destination.write_text("\n".join(parts))
