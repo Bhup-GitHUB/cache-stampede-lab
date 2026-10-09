@@ -58,7 +58,8 @@ def setup(mode, **overrides):
 
 
 def run(args, directory, mode, scenario="hot", **overrides):
-    env = setup(mode)
+    settings = dict(SIMULATED_DELAY=args.simulated_delay, LEASE_TTL=args.lease_ttl, MAX_DB_CONNS=str(args.max_db_conns), MAX_CONCURRENT_DB=str(args.max_concurrent_db))
+    env = setup(mode, **settings)
     directory.mkdir(parents=True, exist_ok=False)
     clear_data()
     keys = 2000 if scenario == "distinct" else 20 if scenario == "cold" else 1
@@ -66,7 +67,8 @@ def run(args, directory, mode, scenario="hot", **overrides):
         with concurrent.futures.ThreadPoolExecutor(max_workers=20) as pool:
             list(pool.map(lambda key: get(f"{BASE}/items/{key}"), range(1, keys + 1)))
     if overrides:
-        env = setup(mode, **overrides)
+        settings.update(overrides)
+        env = setup(mode, **settings)
     config = {k: env[k] for k in ("MODE", "CACHE_TTL", "LEASE_TTL", "QUERY_TIMEOUT", "REFRESH_TIMEOUT", "FOLLOWER_TIMEOUT", "SIMULATED_DELAY", "MAX_DB_CONNS", "MAX_CONCURRENT_DB")}
     (directory / "config.json").write_text(json.dumps(dict(config=config, scenario=scenario, replicas=3, offered_rps=args.rate), indent=2) + "\n")
     events = []
@@ -150,6 +152,10 @@ def main():
     parser.add_argument("--repeats", type=int, default=2)
     parser.add_argument("--output", default="results/" + datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
     parser.add_argument("--failures", action="store_true")
+    parser.add_argument("--simulated-delay", default="200ms")
+    parser.add_argument("--lease-ttl", default="2s")
+    parser.add_argument("--max-db-conns", type=int, default=16)
+    parser.add_argument("--max-concurrent-db", type=int, default=32)
     args = parser.parse_args()
     if args.duration <= args.delete_at or args.delete_at < 0 or args.repeats < 1:
         parser.error("duration must exceed delete-at, and repeats must be positive")
