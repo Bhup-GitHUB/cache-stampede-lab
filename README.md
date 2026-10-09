@@ -74,10 +74,10 @@ The simulated delay occupies a database connection and widens the refill window 
 
 ```sh
 go build -o bin/loadgen ./cmd/loadgen
-python3 scripts/benchmark.py --rate 2000 --duration 12 --delete-at 4 --repeats 2 --failures --output results/my-run
+python3 scripts/benchmark.py --rate 2000 --duration 12 --delete-at 4 --repeats 2 --failures --docker-loadgen --output results/my-run
 ```
 
-The main experiment warms a hot key, starts steady traffic, deletes only `data:1` around four seconds, and continues through recovery. It repeats each mode twice. Deletion timestamps are bracketed around the actual Redis command and recorded relative to the generator's start. No scenario uses `FLUSHALL`.
+`--docker-loadgen` runs the same Go generator inside the Compose network, avoiding host port-forwarding capacity limits. Omit it to measure through the published host endpoint instead; both paths record their URLs and environment. The main experiment warms a hot key, starts steady traffic, deletes only `data:1` around four seconds, and continues through recovery. It repeats each mode twice. Deletion timestamps are bracketed around the actual Redis command and recorded relative to the generator's start. No scenario uses `FLUSHALL`.
 
 `--failures` additionally runs 2,000 distinct initially missing keys in every mode, a cold 20-key data cache with a preserved sentinel lease, a killed refresh owner verified through `pg_stat_activity`, a 75 ms lease with a 200 ms query, and Redis stopped during traffic. The owner-kill run uses an 800 ms simulated query so the runner can observe the active owner before killing it. These scenario changes are recorded individually.
 

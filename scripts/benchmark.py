@@ -74,7 +74,12 @@ def run(args, directory, mode, scenario="hot", **overrides):
     events = []
     start = time.time()
     with (directory / "loadgen.log").open("w") as log:
-        process = subprocess.Popen([str(ROOT / "bin/loadgen"), "-url", BASE + "/items/{key}", "-rate", str(args.rate), "-duration", f"{args.duration}s", "-keys", str(keys), "-output", str(directory), "-metrics-urls", METRICS], stdout=log, stderr=subprocess.STDOUT)
+        load_command = [str(ROOT / "bin/loadgen")]
+        url, metrics, output = BASE + "/items/{key}", METRICS, str(directory)
+        if args.docker_loadgen:
+            load_command = ["docker", "run", "--rm", "--name", "cache-stampede-lab-loadgen", "--network", "cache-stampede-lab_default", "--user", f"{os.getuid()}:{os.getgid()}", "-v", f"{directory}:/results", "--entrypoint", "/loadgen", "cache-stampede-lab:local"]
+            url, metrics, output = "http://lb:8080/items/{key}", ",".join(f"http://app{i}:8080/metrics" for i in (1, 2, 3)), "/results"
+        process = subprocess.Popen(load_command + ["-url", url, "-rate", str(args.rate), "-duration", f"{args.duration}s", "-keys", str(keys), "-output", output, "-metrics-urls", metrics], stdout=log, stderr=subprocess.STDOUT)
         try:
             time.sleep(args.delete_at)
             before = time.time()
@@ -119,6 +124,8 @@ def run(args, directory, mode, scenario="hot", **overrides):
                 raise RuntimeError(f"loadgen failed: {directory}")
         finally:
             if process.poll() is None:
+                if args.docker_loadgen:
+                    subprocess.run(["docker", "stop", "cache-stampede-lab-loadgen"], check=False)
                 process.terminate()
                 process.wait()
             if scenario == "redis-unavailable":
@@ -152,6 +159,7 @@ def main():
     parser.add_argument("--repeats", type=int, default=2)
     parser.add_argument("--output", default="results/" + datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
     parser.add_argument("--failures", action="store_true")
+    parser.add_argument("--docker-loadgen", action="store_true")
     parser.add_argument("--simulated-delay", default="200ms")
     parser.add_argument("--lease-ttl", default="2s")
     parser.add_argument("--max-db-conns", type=int, default=16)
@@ -163,7 +171,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     docker_info = json.loads(command(["docker", "info", "--format", "{{json .}} "]))
     docker_info = {key: docker_info[key] for key in ("NCPU", "MemTotal", "KernelVersion", "OperatingSystem", "Architecture", "ServerVersion", "ContainersRunning")}
-    details = dict(platform=platform.platform(), cpu_count=os.cpu_count(), go=command(["go", "version"]), docker=docker_info, compose=compose("version"), args=vars(args), revision=command(["git", "rev-parse", "HEAD"]),  images=compose("images", "--format", "json"))
+    details = dict(platform=platform.platform(), cpu_count=os.cpu_count(), go=command(["go", "version"]), docker=docker_info, compose=compose("version"), args=vars(args), revision=command(["git", "rev-parse", "HEAD"]),  application_image=command(["docker", "image", "inspect", "cache-stampede-lab:local", "--format", "{{.Id}}"]), initial_container_images=compose("images", "--format", "json"))
     (out / "environment.json").write_text(json.dumps(details, indent=2) + "\n")
     (out / "compose.yaml").write_text(compose("config") + "\n")
     for mode in ("naive", "singleflight", "lease"):
