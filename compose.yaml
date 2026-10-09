@@ -1,5 +1,6 @@
 name: cache-stampede-lab
 x-app: &app
+  image: cache-stampede-lab:local
   build: .
   environment: &env
     MODE: ${MODE:-lease}
@@ -25,7 +26,7 @@ services:
       POSTGRES_USER: stampede
       POSTGRES_PASSWORD: stampede
       POSTGRES_DB: stampede
-    ports: ['127.0.0.1:55432:5432']
+    ports: ['127.0.0.1:55439:5432']
     volumes: ['./deploy/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro']
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U stampede']
@@ -34,7 +35,7 @@ services:
       retries: 30
   redis:
     image: redis:7-alpine
-    ports: ['127.0.0.1:56379:6379']
+    ports: ['127.0.0.1:56389:6379']
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
       interval: 1s
@@ -59,11 +60,11 @@ services:
       INSTANCE: app3
     ports: ['127.0.0.1:18083:8080']
   lb:
-    image: nginx:1.27-alpine
+    image: nginx:alpine
     ports: ['127.0.0.1:18080:8080']
     volumes: ['./deploy/nginx.conf:/etc/nginx/nginx.conf:ro']
     depends_on: [app1, app2, app3]
   prometheus:
-    image: prom/prometheus:v3.2.1
+    image: prom/prometheus:v3.1.0
     ports: ['127.0.0.1:19090:9090']
     volumes: ['./deploy/prometheus.yml:/etc/prometheus/prometheus.yml:ro']
