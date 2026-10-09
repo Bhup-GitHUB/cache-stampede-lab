@@ -1,0 +1,178 @@
+# sample_seconds 9.000874614
+# scrape_started_at 2026-10-09T16:31:01.28763714Z
+# replica http://app1:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:01.287649474Z
+# replica_scrape_finished_at 2026-10-09T16:31:01.288130688Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app1",mode="lease",operation="db_query"} 0
+stampede_active{instance="app1",mode="lease",operation="waiters"} 0
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app1",mode="lease"} 1
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="db_query",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app1",mode="lease",operation="db_query"} 0.204580784
+stampede_duration_seconds_count{instance="app1",mode="lease",operation="db_query"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.001"} 5735
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.005"} 5808
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.01"} 5840
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.025"} 5862
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.05"} 5888
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.1"} 5923
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.2"} 5990
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.4"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.8"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="1.6"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="3.2"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="6.4"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="+Inf"} 6001
+stampede_duration_seconds_sum{instance="app1",mode="lease",operation="http"} 16.972370586000043
+stampede_duration_seconds_count{instance="app1",mode="lease",operation="http"} 6001
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.025"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.05"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.1"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.2"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="pool_wait",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app1",mode="lease",operation="pool_wait"} 1.2333e-05
+stampede_duration_seconds_count{instance="app1",mode="lease",operation="pool_wait"} 1
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app1",kind="cache",mode="lease",outcome="hit"} 5864
+stampede_events_total{instance="app1",kind="cache",mode="lease",outcome="miss"} 148
+stampede_events_total{instance="app1",kind="db_query",mode="lease",outcome="completed"} 1
+stampede_events_total{instance="app1",kind="db_query",mode="lease",outcome="started"} 1
+stampede_events_total{instance="app1",kind="follower",mode="lease",outcome="distributed_wait"} 6
+stampede_events_total{instance="app1",kind="follower",mode="lease",outcome="local_shared"} 137
+stampede_events_total{instance="app1",kind="http",mode="lease",outcome="200"} 6001
+stampede_events_total{instance="app1",kind="lease",mode="lease",outcome="acquired"} 1
+stampede_events_total{instance="app1",kind="lease",mode="lease",outcome="contended"} 6
+stampede_events_total{instance="app1",kind="lease_release",mode="lease",outcome="1"} 1
+stampede_events_total{instance="app1",kind="refresh",mode="lease",outcome="local_owner"} 2
+stampede_events_total{instance="app1",kind="refresh",mode="lease",outcome="owner"} 1
+# replica http://app2:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:01.288150396Z
+# replica_scrape_finished_at 2026-10-09T16:31:01.288571693Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app2",mode="lease",operation="db_query"} 0
+stampede_active{instance="app2",mode="lease",operation="waiters"} 0
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app2",mode="lease"} 1
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="db_query",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app2",mode="lease",operation="db_query"} 0.203800089
+stampede_duration_seconds_count{instance="app2",mode="lease",operation="db_query"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.001"} 5749
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.005"} 5830
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.01"} 5851
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.025"} 5877
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.05"} 5896
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.1"} 5930
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.2"} 5997
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.4"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.8"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="1.6"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="3.2"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="6.4"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="+Inf"} 6001
+stampede_duration_seconds_sum{instance="app2",mode="lease",operation="http"} 15.16181819700002
+stampede_duration_seconds_count{instance="app2",mode="lease",operation="http"} 6001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.025"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.05"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.1"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="pool_wait",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app2",mode="lease",operation="pool_wait"} 0.000323962
+stampede_duration_seconds_count{instance="app2",mode="lease",operation="pool_wait"} 1
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app2",kind="cache",mode="lease",outcome="hit"} 5865
+stampede_events_total{instance="app2",kind="cache",mode="lease",outcome="miss"} 139
+stampede_events_total{instance="app2",kind="db_query",mode="lease",outcome="completed"} 1
+stampede_events_total{instance="app2",kind="db_query",mode="lease",outcome="started"} 1
+stampede_events_total{instance="app2",kind="follower",mode="lease",outcome="local_shared"} 136
+stampede_events_total{instance="app2",kind="http",mode="lease",outcome="200"} 6001
+stampede_events_total{instance="app2",kind="lease",mode="lease",outcome="acquired"} 1
+stampede_events_total{instance="app2",kind="lease_release",mode="lease",outcome="1"} 1
+stampede_events_total{instance="app2",kind="refresh",mode="lease",outcome="local_owner"} 1
+stampede_events_total{instance="app2",kind="refresh",mode="lease",outcome="owner"} 1
+# replica http://app3:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:01.28859711Z
+# replica_scrape_finished_at 2026-10-09T16:31:01.288876779Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app3",mode="lease",operation="waiters"} 0
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app3",mode="lease"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.001"} 5719
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.005"} 5780
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.01"} 5803
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.025"} 5855
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.05"} 5868
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.1"} 5908
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.2"} 5974
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.4"} 6001
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.8"} 6001
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="1.6"} 6001
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="3.2"} 6001
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="6.4"} 6001
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="+Inf"} 6001
+stampede_duration_seconds_sum{instance="app3",mode="lease",operation="http"} 20.772655728000018
+stampede_duration_seconds_count{instance="app3",mode="lease",operation="http"} 6001
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app3",kind="cache",mode="lease",outcome="hit"} 5866
+stampede_events_total{instance="app3",kind="cache",mode="lease",outcome="miss"} 144
+stampede_events_total{instance="app3",kind="follower",mode="lease",outcome="distributed_wait"} 7
+stampede_events_total{instance="app3",kind="follower",mode="lease",outcome="local_shared"} 136
+stampede_events_total{instance="app3",kind="http",mode="lease",outcome="200"} 6001
+stampede_events_total{instance="app3",kind="lease",mode="lease",outcome="contended"} 7
+stampede_events_total{instance="app3",kind="refresh",mode="lease",outcome="local_owner"} 1
+# scrape_finished_at 2026-10-09T16:31:01.288919572Z

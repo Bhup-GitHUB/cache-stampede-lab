@@ -1,0 +1,21 @@
+# sample_seconds 0.000000000
+# scrape_started_at 2026-10-09T16:31:47.074923577Z
+# replica http://app1:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:47.074939577Z
+# replica_scrape_finished_at 2026-10-09T16:31:47.076240383Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app1",mode="lease"} 0
+# replica http://app2:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:47.076245216Z
+# replica_scrape_finished_at 2026-10-09T16:31:47.076816972Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app2",mode="lease"} 0
+# replica http://app3:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:31:47.076819722Z
+# replica_scrape_finished_at 2026-10-09T16:31:47.077352353Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app3",mode="lease"} 0
+# scrape_finished_at 2026-10-09T16:31:47.077355394Z

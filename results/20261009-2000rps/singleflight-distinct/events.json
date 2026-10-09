@@ -1,0 +1,9 @@
+[
+  {
+    "event": "observation",
+    "before_unix": 1791563497.019524,
+    "after_unix": 1791563497.019573,
+    "action": "initial cold 2000 keys; no mid-run deletion",
+    "second": 3.9055893421173096
+  }
+]

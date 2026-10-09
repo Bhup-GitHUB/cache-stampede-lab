@@ -1,0 +1,12 @@
+# sample_seconds 12.000062333
+# scrape_started_at 2026-10-09T16:26:01.201985Z
+# replica http://127.0.0.1:18081/metrics
+# replica_scrape_started_at 2026-10-09T16:26:01.201997Z
+# scrape_error Get "http://127.0.0.1:18081/metrics": dial tcp 127.0.0.1:18081: connect: connection refused
+# replica http://127.0.0.1:18082/metrics
+# replica_scrape_started_at 2026-10-09T16:26:01.202066Z
+# scrape_error Get "http://127.0.0.1:18082/metrics": dial tcp 127.0.0.1:18082: connect: connection refused
+# replica http://127.0.0.1:18083/metrics
+# replica_scrape_started_at 2026-10-09T16:26:01.202129Z
+# scrape_error Get "http://127.0.0.1:18083/metrics": dial tcp 127.0.0.1:18083: connect: connection refused
+# scrape_finished_at 2026-10-09T16:26:01.202191Z

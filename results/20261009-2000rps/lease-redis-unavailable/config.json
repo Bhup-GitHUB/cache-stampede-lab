@@ -1,0 +1,16 @@
+{
+  "config": {
+    "MODE": "lease",
+    "CACHE_TTL": "60s",
+    "LEASE_TTL": "2s",
+    "QUERY_TIMEOUT": "2s",
+    "REFRESH_TIMEOUT": "3s",
+    "FOLLOWER_TIMEOUT": "3s",
+    "SIMULATED_DELAY": "200ms",
+    "MAX_DB_CONNS": "16",
+    "MAX_CONCURRENT_DB": "32"
+  },
+  "scenario": "redis-unavailable",
+  "replicas": 3,
+  "offered_rps": 2000
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "event": "redis_stop",
+    "before_unix": 1791563570.7189848,
+    "after_unix": 1791563570.967416,
+    "action": "stop redis",
+    "second": 4.146765470504761
+  }
+]

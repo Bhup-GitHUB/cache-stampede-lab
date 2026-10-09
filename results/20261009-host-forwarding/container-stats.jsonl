@@ -1,0 +1,6 @@
+{"BlockIO":"0B / 0B","CPUPerc":"4.79%","Container":"cache-stampede-lab-app1-1","ID":"991345c89ec6","MemPerc":"0.22%","MemUsage":"8.441MiB / 3.814GiB","Name":"cache-stampede-lab-app1-1","NetIO":"795kB / 947kB","PIDs":"8"}
+{"BlockIO":"24.6kB / 0B","CPUPerc":"4.84%","Container":"cache-stampede-lab-app2-1","ID":"3f2a88cfa5d9","MemPerc":"0.22%","MemUsage":"8.516MiB / 3.814GiB","Name":"cache-stampede-lab-app2-1","NetIO":"813kB / 955kB","PIDs":"8"}
+{"BlockIO":"0B / 0B","CPUPerc":"3.70%","Container":"cache-stampede-lab-app3-1","ID":"39b5c4b5063a","MemPerc":"0.18%","MemUsage":"7.203MiB / 3.814GiB","Name":"cache-stampede-lab-app3-1","NetIO":"593kB / 712kB","PIDs":"7"}
+{"BlockIO":"3.1MB / 12.3kB","CPUPerc":"7.60%","Container":"cache-stampede-lab-lb-1","ID":"5937ba975d6f","MemPerc":"0.26%","MemUsage":"10.19MiB / 3.814GiB","Name":"cache-stampede-lab-lb-1","NetIO":"32.9MB / 35.5MB","PIDs":"2"}
+{"BlockIO":"2MB / 4.1kB","CPUPerc":"3.89%","Container":"cache-stampede-lab-redis-1","ID":"cca04b8511a2","MemPerc":"0.14%","MemUsage":"5.637MiB / 3.814GiB","Name":"cache-stampede-lab-redis-1","NetIO":"7.73MB / 8.41MB","PIDs":"6"}
+{"BlockIO":"2.94MB / 57.5MB","CPUPerc":"0.95%","Container":"cache-stampede-lab-postgres-1","ID":"b98546180acb","MemPerc":"0.76%","MemUsage":"29.55MiB / 3.814GiB","Name":"cache-stampede-lab-postgres-1","NetIO":"242kB / 254kB","PIDs":"9"}

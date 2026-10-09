@@ -1,0 +1,10 @@
+[
+  {
+    "event": "cold_data_delete",
+    "before_unix": 1791563524.822796,
+    "after_unix": 1791563524.993862,
+    "deleted": "20",
+    "lease_preserved": "preserve-me",
+    "second": 4.041121006011963
+  }
+]

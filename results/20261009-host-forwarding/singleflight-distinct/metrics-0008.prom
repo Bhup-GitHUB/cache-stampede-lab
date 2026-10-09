@@ -1,0 +1,207 @@
+# sample_seconds 8.000023958
+# scrape_started_at 2026-10-09T16:25:16.592447Z
+# replica http://127.0.0.1:18081/metrics
+# replica_scrape_started_at 2026-10-09T16:25:16.592456Z
+# replica_scrape_finished_at 2026-10-09T16:25:16.593092Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app1",mode="singleflight",operation="db_query"} 16
+stampede_active{instance="app1",mode="singleflight",operation="waiters"} 29
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app1",mode="singleflight"} 632
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.4"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="0.8"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="1.6"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="3.2"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="6.4"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="db_query",le="+Inf"} 616
+stampede_duration_seconds_sum{instance="app1",mode="singleflight",operation="db_query"} 124.14174736800003
+stampede_duration_seconds_count{instance="app1",mode="singleflight",operation="db_query"} 616
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.001"} 4664
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.005"} 4687
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.01"} 4688
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.025"} 4688
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.05"} 4688
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.1"} 4688
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.2"} 4688
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.4"} 4945
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="0.8"} 5304
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="1.6"} 5304
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="3.2"} 5304
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="6.4"} 5304
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="http",le="+Inf"} 5304
+stampede_duration_seconds_sum{instance="app1",mode="singleflight",operation="http"} 242.26771799900087
+stampede_duration_seconds_count{instance="app1",mode="singleflight",operation="http"} 5304
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.025"} 3
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.05"} 7
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.1"} 18
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.2"} 384
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.4"} 632
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="0.8"} 632
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="1.6"} 632
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="3.2"} 632
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="6.4"} 632
+stampede_duration_seconds_bucket{instance="app1",mode="singleflight",operation="pool_wait",le="+Inf"} 632
+stampede_duration_seconds_sum{instance="app1",mode="singleflight",operation="pool_wait"} 120.196703868
+stampede_duration_seconds_count{instance="app1",mode="singleflight",operation="pool_wait"} 632
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app1",kind="cache",mode="singleflight",outcome="hit"} 2327
+stampede_events_total{instance="app1",kind="cache",mode="singleflight",outcome="miss"} 6012
+stampede_events_total{instance="app1",kind="db_fallback",mode="singleflight",outcome="rejected"} 2361
+stampede_events_total{instance="app1",kind="db_query",mode="singleflight",outcome="completed"} 616
+stampede_events_total{instance="app1",kind="db_query",mode="singleflight",outcome="started"} 632
+stampede_events_total{instance="app1",kind="http",mode="singleflight",outcome="200"} 2943
+stampede_events_total{instance="app1",kind="http",mode="singleflight",outcome="503"} 2361
+stampede_events_total{instance="app1",kind="refresh",mode="singleflight",outcome="local_owner"} 3006
+stampede_events_total{instance="app1",kind="refresh",mode="singleflight",outcome="owner"} 632
+# replica http://127.0.0.1:18082/metrics
+# replica_scrape_started_at 2026-10-09T16:25:16.593106Z
+# replica_scrape_finished_at 2026-10-09T16:25:16.593807Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app2",mode="singleflight",operation="db_query"} 16
+stampede_active{instance="app2",mode="singleflight",operation="waiters"} 27
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app2",mode="singleflight"} 635
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.4"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="0.8"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="1.6"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="3.2"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="6.4"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="db_query",le="+Inf"} 619
+stampede_duration_seconds_sum{instance="app2",mode="singleflight",operation="db_query"} 124.77667999799995
+stampede_duration_seconds_count{instance="app2",mode="singleflight",operation="db_query"} 619
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.001"} 4659
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.005"} 4686
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.01"} 4689
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.025"} 4689
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.05"} 4689
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.1"} 4689
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.2"} 4689
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.4"} 4905
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="0.8"} 5308
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="1.6"} 5308
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="3.2"} 5308
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="6.4"} 5308
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="http",le="+Inf"} 5308
+stampede_duration_seconds_sum{instance="app2",mode="singleflight",operation="http"} 243.6774784450008
+stampede_duration_seconds_count{instance="app2",mode="singleflight",operation="http"} 5308
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.025"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.05"} 6
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.1"} 18
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.2"} 347
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.4"} 635
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="0.8"} 635
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="1.6"} 635
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="3.2"} 635
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="6.4"} 635
+stampede_duration_seconds_bucket{instance="app2",mode="singleflight",operation="pool_wait",le="+Inf"} 635
+stampede_duration_seconds_sum{instance="app2",mode="singleflight",operation="pool_wait"} 121.12513204499999
+stampede_duration_seconds_count{instance="app2",mode="singleflight",operation="pool_wait"} 635
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app2",kind="cache",mode="singleflight",outcome="hit"} 2332
+stampede_events_total{instance="app2",kind="cache",mode="singleflight",outcome="miss"} 6006
+stampede_events_total{instance="app2",kind="db_fallback",mode="singleflight",outcome="rejected"} 2357
+stampede_events_total{instance="app2",kind="db_query",mode="singleflight",outcome="completed"} 619
+stampede_events_total{instance="app2",kind="db_query",mode="singleflight",outcome="started"} 635
+stampede_events_total{instance="app2",kind="http",mode="singleflight",outcome="200"} 2951
+stampede_events_total{instance="app2",kind="http",mode="singleflight",outcome="503"} 2357
+stampede_events_total{instance="app2",kind="refresh",mode="singleflight",outcome="local_owner"} 3003
+stampede_events_total{instance="app2",kind="refresh",mode="singleflight",outcome="owner"} 635
+# replica http://127.0.0.1:18083/metrics
+# replica_scrape_started_at 2026-10-09T16:25:16.59382Z
+# replica_scrape_finished_at 2026-10-09T16:25:16.594429Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app3",mode="singleflight",operation="db_query"} 16
+stampede_active{instance="app3",mode="singleflight",operation="waiters"} 29
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app3",mode="singleflight"} 634
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.4"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="0.8"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="1.6"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="3.2"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="6.4"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="db_query",le="+Inf"} 618
+stampede_duration_seconds_sum{instance="app3",mode="singleflight",operation="db_query"} 124.55074355800006
+stampede_duration_seconds_count{instance="app3",mode="singleflight",operation="db_query"} 618
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.001"} 4668
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.005"} 4685
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.01"} 4687
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.025"} 4687
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.05"} 4687
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.1"} 4687
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.2"} 4687
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.4"} 4931
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="0.8"} 5305
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="1.6"} 5305
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="3.2"} 5305
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="6.4"} 5305
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="http",le="+Inf"} 5305
+stampede_duration_seconds_sum{instance="app3",mode="singleflight",operation="http"} 241.81884215799968
+stampede_duration_seconds_count{instance="app3",mode="singleflight",operation="http"} 5305
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.025"} 1
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.05"} 4
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.1"} 25
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.2"} 353
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.4"} 634
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="0.8"} 634
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="1.6"} 634
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="3.2"} 634
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="6.4"} 634
+stampede_duration_seconds_bucket{instance="app3",mode="singleflight",operation="pool_wait",le="+Inf"} 634
+stampede_duration_seconds_sum{instance="app3",mode="singleflight",operation="pool_wait"} 119.46041085200002
+stampede_duration_seconds_count{instance="app3",mode="singleflight",operation="pool_wait"} 634
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app3",kind="cache",mode="singleflight",outcome="hit"} 2334
+stampede_events_total{instance="app3",kind="cache",mode="singleflight",outcome="miss"} 6000
+stampede_events_total{instance="app3",kind="db_fallback",mode="singleflight",outcome="rejected"} 2353
+stampede_events_total{instance="app3",kind="db_query",mode="singleflight",outcome="completed"} 618
+stampede_events_total{instance="app3",kind="db_query",mode="singleflight",outcome="started"} 634
+stampede_events_total{instance="app3",kind="http",mode="singleflight",outcome="200"} 2952
+stampede_events_total{instance="app3",kind="http",mode="singleflight",outcome="503"} 2353
+stampede_events_total{instance="app3",kind="refresh",mode="singleflight",outcome="local_owner"} 3000
+stampede_events_total{instance="app3",kind="refresh",mode="singleflight",outcome="owner"} 634
+# scrape_finished_at 2026-10-09T16:25:16.594443Z

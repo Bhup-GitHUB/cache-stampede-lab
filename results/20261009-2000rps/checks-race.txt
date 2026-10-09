@@ -1,0 +1,5 @@
+# cache-stampede-lab/internal/service.test
+ld: warning: '/private/var/folders/9m/ld4vfb2n6r1dvn9pl9_w__pr0000gn/T/go-link-15322857/000013.o' has malformed LC_DYSYMTAB, expected 98 undefined symbols to start at index 1626, found 95 undefined symbols starting at index 1626
+ok  	cache-stampede-lab/cmd/loadgen	1.879s
+?   	cache-stampede-lab/cmd/server	[no test files]
+ok  	cache-stampede-lab/internal/service	4.072s

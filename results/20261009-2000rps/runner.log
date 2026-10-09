@@ -1,0 +1,421 @@
+time="2026-10-09T21:59:56+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+2026/10/09 16:29:57 [notice] 138#138: signal process started
+naive-1 {"completed": 24000, "completed_rps_including_drain": 1999.9991203337204, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000005278, "errors": 308, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.126169, "p95_ms": 0.312629, "p99_ms": 1.140557, "scheduling_lag_p99_ms": 1.23933, "start_unix_seconds": 1791563397.7233918, "started_at": "2026-10-09T16:29:57.723391737Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:00:09+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+2026/10/09 16:30:10 [notice] 175#175: signal process started
+naive-2 {"completed": 24000, "completed_rps_including_drain": 1999.8898565661223, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000660897, "errors": 309, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.126335, "p95_ms": 0.315879, "p99_ms": 1.318683, "scheduling_lag_p99_ms": 1.190829, "start_unix_seconds": 1791563411.1699932, "started_at": "2026-10-09T16:30:11.169993264Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:00:23+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app2-1 Started 
+2026/10/09 16:30:24 [notice] 212#212: signal process started
+singleflight-1 {"completed": 24000, "completed_rps_including_drain": 1999.8219605171066, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.001068332, "errors": 0, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.120543, "p95_ms": 0.269587, "p99_ms": 87.975789, "scheduling_lag_p99_ms": 1.198326, "start_unix_seconds": 1791563425.033431, "started_at": "2026-10-09T16:30:25.033431027Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:00:37+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+2026/10/09 16:30:37 [notice] 246#246: signal process started
+singleflight-2 {"completed": 24000, "completed_rps_including_drain": 1999.850631156359, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.00089628, "errors": 0, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.126418, "p95_ms": 0.348379, "p99_ms": 87.229879, "scheduling_lag_p99_ms": 1.238916, "start_unix_seconds": 1791563438.4301844, "started_at": "2026-10-09T16:30:38.43018453Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:00:50+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app2-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+2026/10/09 16:30:51 [notice] 282#282: signal process started
+lease-1 {"completed": 24000, "completed_rps_including_drain": 1999.979641540569, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000122152, "errors": 0, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.14696, "p95_ms": 2.366278, "p99_ms": 105.227812, "scheduling_lag_p99_ms": 6.742606, "start_unix_seconds": 1791563452.286762, "started_at": "2026-10-09T16:30:52.286762027Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:01:04+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+2026/10/09 16:31:05 [notice] 318#318: signal process started
+lease-2 {"completed": 24000, "completed_rps_including_drain": 1999.9221027007795, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000467402, "errors": 0, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.125085, "p95_ms": 0.305337, "p99_ms": 138.68729, "scheduling_lag_p99_ms": 1.208856, "start_unix_seconds": 1791563465.7509742, "started_at": "2026-10-09T16:31:05.750974218Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:01:18+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-app2-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+2026/10/09 16:31:18 [notice] 354#354: signal process started
+naive-distinct {"completed": 24000, "completed_rps_including_drain": 1999.8176679573357, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.001094092, "errors": 7074, "key_start": 1, "keys": 2000, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.167127, "p95_ms": 370.149528, "p99_ms": 402.669202, "scheduling_lag_p99_ms": 4.168873, "start_unix_seconds": 1791563479.4968176, "started_at": "2026-10-09T16:31:19.496817681Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:01:31+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app2-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+2026/10/09 16:31:32 [notice] 385#385: signal process started
+singleflight-distinct {"completed": 24000, "completed_rps_including_drain": 1999.8631520309907, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000821144, "errors": 7078, "key_start": 1, "keys": 2000, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.173543, "p95_ms": 357.422861, "p99_ms": 402.638316, "scheduling_lag_p99_ms": 1.840121, "start_unix_seconds": 1791563493.1139836, "started_at": "2026-10-09T16:31:33.113983808Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:01:45+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app2-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+2026/10/09 16:31:46 [notice] 416#416: signal process started
+lease-distinct {"completed": 24000, "completed_rps_including_drain": 1999.8367983184812, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.00097929, "errors": 7034, "key_start": 1, "keys": 2000, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.187127, "p95_ms": 351.305242, "p99_ms": 403.003481, "scheduling_lag_p99_ms": 1.301517, "start_unix_seconds": 1791563507.0778873, "started_at": "2026-10-09T16:31:47.077887192Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:01:59+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+2026/10/09 16:32:00 [notice] 446#446: signal process started
+lease-cold {"completed": 24000, "completed_rps_including_drain": 1999.812273788886, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.001126463, "errors": 0, "key_start": 1, "keys": 20, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.13521, "p95_ms": 0.756091, "p99_ms": 111.29456, "scheduling_lag_p99_ms": 1.978005, "start_unix_seconds": 1791563520.952741, "started_at": "2026-10-09T16:32:00.95274093Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:02:13+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+2026/10/09 16:32:13 [notice] 595#595: signal process started
+time="2026-10-09T22:02:14+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app2-1 Started 
+2026/10/09 16:32:15 [notice] 630#630: signal process started
+lease-expiry {"completed": 24000, "completed_rps_including_drain": 1821.6696658630985, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 13.174726708, "errors": 16093, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 1128.569865, "p95_ms": 2863.451663, "p99_ms": 3000.397899, "scheduling_lag_p99_ms": 2.307139, "start_unix_seconds": 1791563535.707453, "started_at": "2026-10-09T16:32:15.707452887Z", "timeout": "3s", "timeouts": 321, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:02:29+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app2-1 Started 
+2026/10/09 16:32:30 [notice] 660#660: signal process started
+time="2026-10-09T22:02:30+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-app2-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+2026/10/09 16:32:31 [notice] 697#697: signal process started
+ Container cache-stampede-lab-app1-1 Killing 
+wget: error getting response: Invalid argument
+ Container cache-stampede-lab-app1-1 Killed 
+time="2026-10-09T22:02:44+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Started 
+2026/10/09 16:32:45 [notice] 733#733: signal process started
+lease-owner-killed {"completed": 24000, "completed_rps_including_drain": 1999.840371075047, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.00095785, "errors": 98, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.150835, "p95_ms": 2245.617314, "p99_ms": 2708.431846, "scheduling_lag_p99_ms": 1.391998, "start_unix_seconds": 1791563552.1810498, "started_at": "2026-10-09T16:32:32.181049909Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}
+time="2026-10-09T22:02:45+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app2-1 Started 
+2026/10/09 16:32:46 [notice] 740#740: signal process started
+ Container cache-stampede-lab-redis-1 Stopping 
+ Container cache-stampede-lab-redis-1 Stopped 
+ Container cache-stampede-lab-redis-1 Starting 
+ Container cache-stampede-lab-redis-1 Started 
+lease-redis-unavailable {"completed": 24000, "completed_rps_including_drain": 1999.887949944626, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000672338, "errors": 15915, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://app1:8080/metrics,http://app2:8080/metrics,http://app3:8080/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.117751, "p95_ms": 0.403546, "p99_ms": 4.45625, "scheduling_lag_p99_ms": 1.312166, "start_unix_seconds": 1791563566.8206506, "started_at": "2026-10-09T16:32:46.820650559Z", "timeout": "3s", "timeouts": 0, "url": "http://lb:8080/items/{key}"}

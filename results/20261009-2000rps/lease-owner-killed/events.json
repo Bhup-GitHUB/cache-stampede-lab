@@ -1,0 +1,27 @@
+[
+  {
+    "event": "cache_delete",
+    "before_unix": 1791563556.083165,
+    "after_unix": 1791563556.1447349,
+    "deleted": "1",
+    "second": 3.9636850357055664
+  },
+  {
+    "event": "owner_killed",
+    "before_unix": 1791563556.264139,
+    "after_unix": 1791563556.372233,
+    "owner": "app1",
+    "second": 4.191183090209961
+  },
+  {
+    "event": "owner_kill_observation",
+    "before_unix": 1791563556.264139,
+    "after_unix": 1791563556.3723671,
+    "owner": "app1",
+    "active_query_observed": true,
+    "lease_token_before_kill": "3a7a3cf3d5e1b30c706f46a905f758c9",
+    "action": "SIGKILL owner during pg_sleep",
+    "direct_request_error": "Command '['docker-compose', 'exec', '-T', 'lb', 'wget', '-q', '-T', '6', '-O', '-', 'http://app1:8080/items/1']' returned non-zero exit status 1.",
+    "second": 4.191317319869995
+  }
+]

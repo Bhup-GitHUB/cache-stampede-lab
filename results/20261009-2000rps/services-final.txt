@@ -1,0 +1,8 @@
+NAME                              IMAGE                      COMMAND                  SERVICE      CREATED          STATUS                    PORTS
+cache-stampede-lab-app1-1         cache-stampede-lab:local   "/server"                app1         25 seconds ago   Up 24 seconds             127.0.0.1:18081->8080/tcp
+cache-stampede-lab-app2-1         cache-stampede-lab:local   "/server"                app2         25 seconds ago   Up 24 seconds             127.0.0.1:18082->8080/tcp
+cache-stampede-lab-app3-1         cache-stampede-lab:local   "/server"                app3         25 seconds ago   Up 24 seconds             127.0.0.1:18083->8080/tcp
+cache-stampede-lab-lb-1           nginx:alpine               "/docker-entrypoint.…"   lb           12 minutes ago   Up 12 minutes             80/tcp, 127.0.0.1:18080->8080/tcp
+cache-stampede-lab-postgres-1     postgres:17-alpine         "docker-entrypoint.s…"   postgres     14 minutes ago   Up 14 minutes (healthy)   127.0.0.1:55439->5432/tcp
+cache-stampede-lab-prometheus-1   prom/prometheus:v3.1.0     "/bin/prometheus --c…"   prometheus   12 minutes ago   Up 12 minutes             127.0.0.1:19090->9090/tcp
+cache-stampede-lab-redis-1        redis:7-alpine             "docker-entrypoint.s…"   redis        14 minutes ago   Up 11 seconds (healthy)   127.0.0.1:56389->6379/tcp

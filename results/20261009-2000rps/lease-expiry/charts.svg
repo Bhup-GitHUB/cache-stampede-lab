@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1100" viewBox="0 0 1100 1100">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" font-size="13" fill="#243247">
+<text x="45" y="32" font-size="23">lease: hot, simulated PostgreSQL delay 200ms</text>
+<text x="45" y="56">Actual measurements · 1-second buckets · HTTP latency includes error responses</text>
+<text x="95" y="75" font-size="16">PostgreSQL query starts / second</text>
+<path d="M 95 245 H 1040" stroke="#e2e7ed"/><text x="85" y="249" text-anchor="end">0.0</text>
+<path d="M 95 205.0 H 1040" stroke="#e2e7ed"/><text x="85" y="209.0" text-anchor="end">3.0</text>
+<path d="M 95 165.0 H 1040" stroke="#e2e7ed"/><text x="85" y="169.0" text-anchor="end">6.1</text>
+<path d="M 95 125.0 H 1040" stroke="#e2e7ed"/><text x="85" y="129.0" text-anchor="end">9.1</text>
+<path d="M 95 85 H 1040" stroke="#e2e7ed"/><text x="85" y="89" text-anchor="end">12.1</text>
+<text x="95.0" y="264" text-anchor="middle">0</text>
+<text x="162.5" y="264" text-anchor="middle">1</text>
+<text x="230.0" y="264" text-anchor="middle">2</text>
+<text x="297.5" y="264" text-anchor="middle">3</text>
+<text x="365.0" y="264" text-anchor="middle">4</text>
+<text x="432.5" y="264" text-anchor="middle">5</text>
+<text x="500.0" y="264" text-anchor="middle">6</text>
+<text x="567.5" y="264" text-anchor="middle">7</text>
+<text x="635.0" y="264" text-anchor="middle">8</text>
+<text x="702.5" y="264" text-anchor="middle">9</text>
+<text x="770.0" y="264" text-anchor="middle">10</text>
+<text x="837.5" y="264" text-anchor="middle">11</text>
+<text x="905.0" y="264" text-anchor="middle">12</text>
+<text x="972.5" y="264" text-anchor="middle">13</text>
+<text x="1040.0" y="264" text-anchor="middle">14</text>
+<polyline points="128.75,245.00 196.25,245.00 263.75,245.00 331.25,231.79 398.75,112.84 466.25,112.93 533.75,99.62 601.25,112.90 668.75,112.99 736.25,99.55 803.75,112.92 871.25,112.98 938.75,112.93 1006.25,168.86" stroke="#b33e30" stroke-width="2" fill="none"/>
+<text x="95" y="285" fill="#b33e30">DB QPS</text>
+<path d="M 361.55163407325745 85 V 245" stroke="#111827" stroke-dasharray="5 4"/><text x="366.55163407325745" y="100">Cache deletion</text>
+<text x="95" y="320" font-size="16">Endpoint p99 latency (ms)</text>
+<path d="M 95 490 H 1040" stroke="#e2e7ed"/><text x="85" y="494" text-anchor="end">0.0</text>
+<path d="M 95 450.0 H 1040" stroke="#e2e7ed"/><text x="85" y="454.0" text-anchor="end">826.8</text>
+<path d="M 95 410.0 H 1040" stroke="#e2e7ed"/><text x="85" y="414.0" text-anchor="end">1653.7</text>
+<path d="M 95 370.0 H 1040" stroke="#e2e7ed"/><text x="85" y="374.0" text-anchor="end">2480.5</text>
+<path d="M 95 330 H 1040" stroke="#e2e7ed"/><text x="85" y="334" text-anchor="end">3307.3</text>
+<text x="95.0" y="509" text-anchor="middle">0</text>
+<text x="162.5" y="509" text-anchor="middle">1</text>
+<text x="230.0" y="509" text-anchor="middle">2</text>
+<text x="297.5" y="509" text-anchor="middle">3</text>
+<text x="365.0" y="509" text-anchor="middle">4</text>
+<text x="432.5" y="509" text-anchor="middle">5</text>
+<text x="500.0" y="509" text-anchor="middle">6</text>
+<text x="567.5" y="509" text-anchor="middle">7</text>
+<text x="635.0" y="509" text-anchor="middle">8</text>
+<text x="702.5" y="509" text-anchor="middle">9</text>
+<text x="770.0" y="509" text-anchor="middle">10</text>
+<text x="837.5" y="509" text-anchor="middle">11</text>
+<text x="905.0" y="509" text-anchor="middle">12</text>
+<text x="972.5" y="509" text-anchor="middle">13</text>
+<text x="1040.0" y="509" text-anchor="middle">14</text>
+<polyline points="128.75,489.94 196.25,488.26 263.75,489.97 331.25,489.90" stroke="#6247aa" stroke-width="2" fill="none"/>
+<polyline points="533.75,344.85 601.25,355.54" stroke="#6247aa" stroke-width="2" fill="none"/>
+<polyline points="736.25,344.82 803.75,344.82" stroke="#6247aa" stroke-width="2" fill="none"/>
+<polyline points="938.75,344.55 1006.25,344.79" stroke="#6247aa" stroke-width="2" fill="none"/>
+<text x="95" y="530" fill="#6247aa">HTTP p99</text>
+<path d="M 361.55163407325745 330 V 490" stroke="#111827" stroke-dasharray="5 4"/><text x="366.55163407325745" y="345">Cache deletion</text>
+<text x="95" y="565" font-size="16">Request failures / second</text>
+<path d="M 95 735 H 1040" stroke="#e2e7ed"/><text x="85" y="739" text-anchor="end">0.0</text>
+<path d="M 95 695.0 H 1040" stroke="#e2e7ed"/><text x="85" y="699.0" text-anchor="end">1362.4</text>
+<path d="M 95 655.0 H 1040" stroke="#e2e7ed"/><text x="85" y="659.0" text-anchor="end">2724.7</text>
+<path d="M 95 615.0 H 1040" stroke="#e2e7ed"/><text x="85" y="619.0" text-anchor="end">4087.1</text>
+<path d="M 95 575 H 1040" stroke="#e2e7ed"/><text x="85" y="579" text-anchor="end">5449.4</text>
+<text x="95.0" y="754" text-anchor="middle">0</text>
+<text x="162.5" y="754" text-anchor="middle">1</text>
+<text x="230.0" y="754" text-anchor="middle">2</text>
+<text x="297.5" y="754" text-anchor="middle">3</text>
+<text x="365.0" y="754" text-anchor="middle">4</text>
+<text x="432.5" y="754" text-anchor="middle">5</text>
+<text x="500.0" y="754" text-anchor="middle">6</text>
+<text x="567.5" y="754" text-anchor="middle">7</text>
+<text x="635.0" y="754" text-anchor="middle">8</text>
+<text x="702.5" y="754" text-anchor="middle">9</text>
+<text x="770.0" y="754" text-anchor="middle">10</text>
+<text x="837.5" y="754" text-anchor="middle">11</text>
+<text x="905.0" y="754" text-anchor="middle">12</text>
+<text x="972.5" y="754" text-anchor="middle">13</text>
+<text x="1040.0" y="754" text-anchor="middle">14</text>
+<polyline points="128.75,735.00 196.25,735.00 263.75,735.00 331.25,735.00 398.75,735.00 466.25,735.00 533.75,704.26 601.25,589.55 668.75,735.00 736.25,700.88 803.75,591.78 871.25,735.00 938.75,725.05 1006.25,625.98" stroke="#b33e30" stroke-width="2" fill="none"/>
+<text x="95" y="775" fill="#b33e30">HTTP / transport errors</text>
+<polyline points="128.75,735.00 196.25,735.00 263.75,735.00 331.25,735.00 398.75,735.00 466.25,735.00 533.75,734.53 601.25,735.00 668.75,735.00 736.25,732.97 803.75,732.97 871.25,735.00 938.75,734.03 1006.25,731.07" stroke="#e39122" stroke-width="2" fill="none"/>
+<text x="350" y="775" fill="#e39122">Client timeouts (subset)</text>
+<polyline points="128.75,735.00 196.25,735.00 263.75,735.00 331.25,735.00 398.75,735.00 466.25,735.00 533.75,735.00 601.25,735.00 668.75,735.00 736.25,735.00 803.75,735.00 871.25,735.00 938.75,735.00 1006.25,735.00" stroke="#111827" stroke-width="2" fill="none"/>
+<text x="605" y="775" fill="#111827">Generator drops</text>
+<path d="M 361.55163407325745 575 V 735" stroke="#111827" stroke-dasharray="5 4"/><text x="366.55163407325745" y="590">Cache deletion</text>
+<text x="95" y="810" font-size="16">Request rate / second</text>
+<path d="M 95 980 H 1040" stroke="#e2e7ed"/><text x="85" y="984" text-anchor="end">0.0</text>
+<path d="M 95 940.0 H 1040" stroke="#e2e7ed"/><text x="85" y="944.0" text-anchor="end">1362.4</text>
+<path d="M 95 900.0 H 1040" stroke="#e2e7ed"/><text x="85" y="904.0" text-anchor="end">2724.7</text>
+<path d="M 95 860.0 H 1040" stroke="#e2e7ed"/><text x="85" y="864.0" text-anchor="end">4087.1</text>
+<path d="M 95 820 H 1040" stroke="#e2e7ed"/><text x="85" y="824" text-anchor="end">5449.4</text>
+<text x="95.0" y="999" text-anchor="middle">0</text>
+<text x="162.5" y="999" text-anchor="middle">1</text>
+<text x="230.0" y="999" text-anchor="middle">2</text>
+<text x="297.5" y="999" text-anchor="middle">3</text>
+<text x="365.0" y="999" text-anchor="middle">4</text>
+<text x="432.5" y="999" text-anchor="middle">5</text>
+<text x="500.0" y="999" text-anchor="middle">6</text>
+<text x="567.5" y="999" text-anchor="middle">7</text>
+<text x="635.0" y="999" text-anchor="middle">8</text>
+<text x="702.5" y="999" text-anchor="middle">9</text>
+<text x="770.0" y="999" text-anchor="middle">10</text>
+<text x="837.5" y="999" text-anchor="middle">11</text>
+<text x="905.0" y="999" text-anchor="middle">12</text>
+<text x="972.5" y="999" text-anchor="middle">13</text>
+<text x="1040.0" y="999" text-anchor="middle">14</text>
+<polyline points="128.75,921.28 196.25,921.28 263.75,921.28 331.25,921.28 398.75,921.28 466.25,921.28 533.75,921.28 601.25,921.28 668.75,921.28 736.25,921.28 803.75,921.28 871.25,921.28 938.75,980.00 1006.25,980.00" stroke="#2167a5" stroke-width="2" fill="none"/>
+<text x="95" y="1020" fill="#2167a5">Offered</text>
+<polyline points="128.75,921.51 196.25,921.07 263.75,921.25 331.25,921.31 398.75,921.25 466.25,921.31 533.75,921.28 601.25,921.31 668.75,921.31 736.25,921.19 803.75,921.31 871.25,921.25 938.75,980.00 1006.25,980.00" stroke="#dc8f28" stroke-width="2" fill="none"/>
+<text x="350" y="1020" fill="#dc8f28">Dispatched</text>
+<polyline points="128.75,922.07 196.25,920.51 263.75,921.25 331.25,924.01 398.75,980.00 466.25,980.00 533.75,949.26 601.25,834.55 668.75,980.00 736.25,945.88 803.75,836.78 871.25,980.00 938.75,970.05 1006.25,870.98" stroke="#29946b" stroke-width="2" fill="none"/>
+<text x="605" y="1020" fill="#29946b">Completed</text>
+<path d="M 361.55163407325745 820 V 980" stroke="#111827" stroke-dasharray="5 4"/><text x="366.55163407325745" y="835">Cache deletion</text>
+<text x="550" y="1080" text-anchor="middle">Seconds since load generator start · Missing DB samples are gaps</text>
+</g></svg>

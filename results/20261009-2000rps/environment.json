@@ -1,0 +1,31 @@
+{
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "cpu_count": 10,
+  "go": "go version go1.25.5 darwin/arm64",
+  "docker": {
+    "NCPU": 2,
+    "MemTotal": 4095369216,
+    "KernelVersion": "6.8.0-64-generic",
+    "OperatingSystem": "Ubuntu 24.04.2 LTS",
+    "Architecture": "aarch64",
+    "ServerVersion": "28.4.0",
+    "ContainersRunning": 33
+  },
+  "compose": "Docker Compose version 5.0.1",
+  "args": {
+    "rate": 2000,
+    "duration": 12.0,
+    "delete_at": 4.0,
+    "repeats": 2,
+    "output": "results/20261009-2000rps",
+    "failures": true,
+    "docker_loadgen": true,
+    "simulated_delay": "200ms",
+    "lease_ttl": "2s",
+    "max_db_conns": 16,
+    "max_concurrent_db": 32
+  },
+  "revision": "1c4563542a87a98ec49f002fb2469b7ffc2533fd",
+  "application_image": "sha256:33c2663519fe35840faac9f3502fbc910ca044117763cf6415492e5e6a025a9b",
+  "initial_container_images": "[{\"ID\":\"sha256:6559acbd5d770b15bb3c954629ce190ac3cbbdb2b7f1c30f0385c4e05104e218\",\"ContainerName\":\"cache-stampede-lab-prometheus-1\",\"Repository\":\"prom/prometheus\",\"Tag\":\"v3.1.0\",\"Platform\":\"linux/arm64/v8\",\"Size\":110853317,\"Created\":\"2025-01-02T14:15:56.472078076Z\",\"LastTagTime\":\"2026-09-18T06:27:39.68990244Z\"},{\"ID\":\"sha256:4870c12cd2ca986de501a804b4f506ad3875a0b1874940ba0a2c7f763f1855b2\",\"ContainerName\":\"cache-stampede-lab-lb-1\",\"Repository\":\"nginx\",\"Tag\":\"alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":25754993,\"Created\":\"2026-01-28T04:21:45.626805654Z\",\"LastTagTime\":\"2026-02-01T00:45:16.65783256Z\"},{\"ID\":\"sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf\",\"ContainerName\":\"cache-stampede-lab-redis-1\",\"Repository\":\"redis\",\"Tag\":\"7-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":17699396,\"Created\":\"2026-01-28T02:36:54.639815722Z\",\"LastTagTime\":\"2026-01-30T10:31:54.6383116Z\"},{\"ID\":\"sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24\",\"ContainerName\":\"cache-stampede-lab-postgres-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":115042443,\"Created\":\"2026-09-17T21:31:46.755310538Z\",\"LastTagTime\":\"2026-10-09T16:16:54.986685474Z\"},{\"ID\":\"sha256:33c2663519fe35840faac9f3502fbc910ca044117763cf6415492e5e6a025a9b\",\"ContainerName\":\"cache-stampede-lab-app2-1\",\"Repository\":\"cache-stampede-lab\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":17254987,\"Created\":\"2026-10-09T21:58:16.480301333+05:30\",\"LastTagTime\":\"2026-10-09T16:28:16.512100084Z\"},{\"ID\":\"sha256:33c2663519fe35840faac9f3502fbc910ca044117763cf6415492e5e6a025a9b\",\"ContainerName\":\"cache-stampede-lab-app1-1\",\"Repository\":\"cache-stampede-lab\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":17254987,\"Created\":\"2026-10-09T21:58:16.480301333+05:30\",\"LastTagTime\":\"2026-10-09T16:28:16.512100084Z\"},{\"ID\":\"sha256:33c2663519fe35840faac9f3502fbc910ca044117763cf6415492e5e6a025a9b\",\"ContainerName\":\"cache-stampede-lab-app3-1\",\"Repository\":\"cache-stampede-lab\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":17254987,\"Created\":\"2026-10-09T21:58:16.480301333+05:30\",\"LastTagTime\":\"2026-10-09T16:28:16.512100084Z\"}]"
+}

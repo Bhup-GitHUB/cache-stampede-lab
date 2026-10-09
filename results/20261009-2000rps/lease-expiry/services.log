@@ -1,0 +1,3 @@
+app1-1  | {"time":"2026-10-09T16:32:15.346564414Z","level":"INFO","msg":"server started","address":":8080","mode":"lease","instance":"app1","simulated_delay":200000000}
+app2-1  | {"time":"2026-10-09T16:32:15.35284681Z","level":"INFO","msg":"server started","address":":8080","mode":"lease","instance":"app2","simulated_delay":200000000}
+app3-1  | {"time":"2026-10-09T16:32:15.319549683Z","level":"INFO","msg":"server started","address":":8080","mode":"lease","instance":"app3","simulated_delay":200000000}

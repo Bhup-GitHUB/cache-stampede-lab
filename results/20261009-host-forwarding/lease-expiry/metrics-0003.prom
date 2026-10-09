@@ -1,0 +1,84 @@
+# sample_seconds 3.000079166
+# scrape_started_at 2026-10-09T16:25:52.20199Z
+# replica http://127.0.0.1:18081/metrics
+# replica_scrape_started_at 2026-10-09T16:25:52.202Z
+# replica_scrape_finished_at 2026-10-09T16:25:52.202612Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app1",mode="lease"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.001"} 1943
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.005"} 1974
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.01"} 1981
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.025"} 1990
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.05"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.1"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.2"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.4"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="0.8"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="1.6"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="3.2"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="6.4"} 2000
+stampede_duration_seconds_bucket{instance="app1",mode="lease",operation="http",le="+Inf"} 2000
+stampede_duration_seconds_sum{instance="app1",mode="lease",operation="http"} 0.6684358149999988
+stampede_duration_seconds_count{instance="app1",mode="lease",operation="http"} 2000
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app1",kind="cache",mode="lease",outcome="hit"} 2000
+stampede_events_total{instance="app1",kind="http",mode="lease",outcome="200"} 2000
+# replica http://127.0.0.1:18082/metrics
+# replica_scrape_started_at 2026-10-09T16:25:52.202618Z
+# replica_scrape_finished_at 2026-10-09T16:25:52.203261Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app2",mode="lease"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.001"} 1932
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.005"} 1985
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.01"} 1988
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.025"} 1995
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.05"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.1"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.2"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.4"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="0.8"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="1.6"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="3.2"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="6.4"} 2001
+stampede_duration_seconds_bucket{instance="app2",mode="lease",operation="http",le="+Inf"} 2001
+stampede_duration_seconds_sum{instance="app2",mode="lease",operation="http"} 0.4865471190000002
+stampede_duration_seconds_count{instance="app2",mode="lease",operation="http"} 2001
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app2",kind="cache",mode="lease",outcome="hit"} 2001
+stampede_events_total{instance="app2",kind="http",mode="lease",outcome="200"} 2001
+# replica http://127.0.0.1:18083/metrics
+# replica_scrape_started_at 2026-10-09T16:25:52.203266Z
+# replica_scrape_finished_at 2026-10-09T16:25:52.203816Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app3",mode="lease"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.001"} 1932
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.005"} 1986
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.01"} 1986
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.025"} 1998
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.05"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.1"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.2"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.4"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="0.8"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="1.6"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="3.2"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="6.4"} 2000
+stampede_duration_seconds_bucket{instance="app3",mode="lease",operation="http",le="+Inf"} 2000
+stampede_duration_seconds_sum{instance="app3",mode="lease",operation="http"} 0.4537465990000002
+stampede_duration_seconds_count{instance="app3",mode="lease",operation="http"} 2000
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app3",kind="cache",mode="lease",outcome="hit"} 2000
+stampede_events_total{instance="app3",kind="http",mode="lease",outcome="200"} 2000
+# scrape_finished_at 2026-10-09T16:25:52.203823Z

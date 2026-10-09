@@ -1,0 +1,211 @@
+name: cache-stampede-lab
+services:
+  app1:
+    build:
+      context: /Users/bhupeshkumar/Desktop/cache-stampede-lab
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    environment:
+      CACHE_TTL: 60s
+      DATABASE_URL: postgres://stampede:stampede@postgres:5432/stampede?sslmode=disable
+      FOLLOWER_TIMEOUT: 3s
+      INSTANCE: app1
+      LEASE_TTL: 2s
+      MAX_CONCURRENT_DB: "32"
+      MAX_DB_CONNS: "16"
+      MODE: lease
+      QUERY_TIMEOUT: 2s
+      REDIS_ADDR: redis:6379
+      REFRESH_TIMEOUT: 3s
+      SIMULATED_DELAY: 200ms
+    image: cache-stampede-lab:local
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8080
+        published: "18081"
+        protocol: tcp
+  app2:
+    build:
+      context: /Users/bhupeshkumar/Desktop/cache-stampede-lab
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    environment:
+      CACHE_TTL: 60s
+      DATABASE_URL: postgres://stampede:stampede@postgres:5432/stampede?sslmode=disable
+      FOLLOWER_TIMEOUT: 3s
+      INSTANCE: app2
+      LEASE_TTL: 2s
+      MAX_CONCURRENT_DB: "32"
+      MAX_DB_CONNS: "16"
+      MODE: lease
+      QUERY_TIMEOUT: 2s
+      REDIS_ADDR: redis:6379
+      REFRESH_TIMEOUT: 3s
+      SIMULATED_DELAY: 200ms
+    image: cache-stampede-lab:local
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8080
+        published: "18082"
+        protocol: tcp
+  app3:
+    build:
+      context: /Users/bhupeshkumar/Desktop/cache-stampede-lab
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    environment:
+      CACHE_TTL: 60s
+      DATABASE_URL: postgres://stampede:stampede@postgres:5432/stampede?sslmode=disable
+      FOLLOWER_TIMEOUT: 3s
+      INSTANCE: app3
+      LEASE_TTL: 2s
+      MAX_CONCURRENT_DB: "32"
+      MAX_DB_CONNS: "16"
+      MODE: lease
+      QUERY_TIMEOUT: 2s
+      REDIS_ADDR: redis:6379
+      REFRESH_TIMEOUT: 3s
+      SIMULATED_DELAY: 200ms
+    image: cache-stampede-lab:local
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8080
+        published: "18083"
+        protocol: tcp
+  lb:
+    depends_on:
+      app1:
+        condition: service_started
+        required: true
+      app2:
+        condition: service_started
+        required: true
+      app3:
+        condition: service_started
+        required: true
+    image: nginx:alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8080
+        published: "18080"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /Users/bhupeshkumar/Desktop/cache-stampede-lab/deploy/nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind: {}
+  postgres:
+    environment:
+      POSTGRES_DB: stampede
+      POSTGRES_PASSWORD: stampede
+      POSTGRES_USER: stampede
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U stampede
+      timeout: 2s
+      interval: 1s
+      retries: 30
+    image: postgres:17-alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 5432
+        published: "55439"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /Users/bhupeshkumar/Desktop/cache-stampede-lab/deploy/seed.sql
+        target: /docker-entrypoint-initdb.d/seed.sql
+        read_only: true
+        bind: {}
+  prometheus:
+    image: prom/prometheus:v3.1.0
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 9090
+        published: "19090"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /Users/bhupeshkumar/Desktop/cache-stampede-lab/deploy/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+        bind: {}
+  redis:
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      timeout: 2s
+      interval: 1s
+      retries: 30
+    image: redis:7-alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 6379
+        published: "56389"
+        protocol: tcp
+networks:
+  default:
+    name: cache-stampede-lab_default
+x-app:
+  build: .
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  environment:
+    CACHE_TTL: 60s
+    DATABASE_URL: postgres://stampede:stampede@postgres:5432/stampede?sslmode=disable
+    FOLLOWER_TIMEOUT: 3s
+    LEASE_TTL: 2s
+    MAX_CONCURRENT_DB: "32"
+    MAX_DB_CONNS: "16"
+    MODE: lease
+    QUERY_TIMEOUT: 2s
+    REDIS_ADDR: redis:6379
+    REFRESH_TIMEOUT: 3s
+    SIMULATED_DELAY: 200ms
+  image: cache-stampede-lab:local

@@ -1,0 +1,3 @@
+app2-1  | {"time":"2026-10-09T16:25:08.45128725Z","level":"INFO","msg":"server started","address":":8080","mode":"singleflight","instance":"app2","simulated_delay":200000000}
+app3-1  | {"time":"2026-10-09T16:25:08.479114461Z","level":"INFO","msg":"server started","address":":8080","mode":"singleflight","instance":"app3","simulated_delay":200000000}
+app1-1  | {"time":"2026-10-09T16:25:08.416687012Z","level":"INFO","msg":"server started","address":":8080","mode":"singleflight","instance":"app1","simulated_delay":200000000}

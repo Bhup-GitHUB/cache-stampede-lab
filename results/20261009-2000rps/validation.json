@@ -1,0 +1,15 @@
+{
+  "formatting": "gofmt -l cmd internal: no output",
+  "vet": "go vet ./...: passed",
+  "ordinary_tests": "go test ./... -count=1: passed with real PostgreSQL and Redis",
+  "race_tests": "go test -race ./... -count=1: passed; raw output in checks-race.txt",
+  "integration_tests": 11,
+  "complete_benchmark_runs": 13,
+  "raw_requests": 312000,
+  "generator_drops": 0,
+  "svg_charts_validated": 13,
+  "prometheus_targets_up": 3,
+  "benchmark_transport": "Go load generator and administrative HTTP traffic inside Compose network; temporary Unix socket SSH tunnel for Docker control",
+  "post_run_access": "Restored failed Colima Docker socket and lab forwards; Docker info and GET /items/1 verified",
+  "test_timing": "All integration checks completed before final in-network benchmark suite"
+}

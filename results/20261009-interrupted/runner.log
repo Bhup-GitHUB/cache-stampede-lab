@@ -1,0 +1,69 @@
+time="2026-10-09T21:51:03+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-app1-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreate 
+ Container cache-stampede-lab-app2-1 Recreate 
+ Container cache-stampede-lab-app3-1 Recreated 
+ Container cache-stampede-lab-app1-1 Recreated 
+ Container cache-stampede-lab-app2-1 Recreated 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app3-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-app1-1 Starting 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-app2-1 Starting 
+ Container cache-stampede-lab-app3-1 Started 
+ Container cache-stampede-lab-app1-1 Started 
+ Container cache-stampede-lab-app2-1 Started 
+2026/10/09 16:21:04 [notice] 30#30: signal process started
+naive-1 {"completed": 24000, "completed_rps_including_drain": 1999.9963263400814, "configured_rate": 2000, "dispatched": 24000, "dropped": 0, "duration_seconds": 12, "elapsed_seconds": 12.000022042, "errors": 316, "key_start": 1, "keys": 1, "max_inflight": 10000, "metrics_urls": "http://127.0.0.1:18081/metrics,http://127.0.0.1:18082/metrics,http://127.0.0.1:18083/metrics", "offered": 24000, "offered_rps": 2000, "p50_ms": 0.451209, "p95_ms": 0.935167, "p99_ms": 4.221125, "scheduling_lag_p99_ms": 0.113, "start_unix_seconds": 1791562866.10906, "started_at": "2026-10-09T16:21:06.10906Z", "timeout": "3s", "timeouts": 0, "url": "http://127.0.0.1:18080/items/{key}"}
+time="2026-10-09T21:51:18+05:30" level=warning msg="No services to build"
+ Container cache-stampede-lab-redis-1 Running 
+ Container cache-stampede-lab-postgres-1 Running 
+ Container cache-stampede-lab-app3-1 Running 
+ Container cache-stampede-lab-app1-1 Running 
+ Container cache-stampede-lab-app2-1 Running 
+ Container cache-stampede-lab-lb-1 Running 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-postgres-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Waiting 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-postgres-1 Healthy 
+ Container cache-stampede-lab-redis-1 Healthy 
+2026/10/09 16:21:18 [notice] 37#37: signal process started
+Cannot connect to the Docker daemon at unix:///Users/bhupeshkumar/.colima/default/docker.sock. Is the docker daemon running?
+Traceback (most recent call last):
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 174, in <module>
+    main()
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 163, in main
+    run(args, out / f"{mode}-{repeat}", mode)
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 114, in run
+    evidence = dict(deleted=redis("DEL", "data:1"))
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 28, in redis
+    return compose("exec", "-T", "redis", "redis-cli", "--raw", *args)
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 24, in compose
+    return command(COMPOSE + list(args), env)
+  File "/Users/bhupeshkumar/Desktop/cache-stampede-lab/scripts/benchmark.py", line 20, in command
+    return subprocess.check_output(args, cwd=ROOT, env=env, text=True).strip()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker-compose', 'exec', '-T', 'redis', 'redis-cli', '--raw', 'DEL', 'data:1']' returned non-zero exit status 1.

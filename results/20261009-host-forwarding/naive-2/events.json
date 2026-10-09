@@ -1,0 +1,9 @@
+[
+  {
+    "event": "cache_delete",
+    "before_unix": 1791563032.4357162,
+    "after_unix": 1791563032.481865,
+    "deleted": "1",
+    "second": 4.035653829574585
+  }
+]

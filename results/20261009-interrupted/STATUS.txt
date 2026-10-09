@@ -1,0 +1,1 @@
+Interrupted measurement attempt. Colima host socket and TCP forwarding became unavailable during naive-2. The VM Docker service remained healthy. naive-1 finished; naive-2 is incomplete and must not be used for comparisons. The final full suite uses isolated SSH forwarding and a corrected baseline metrics scrape. Retained for transparency.

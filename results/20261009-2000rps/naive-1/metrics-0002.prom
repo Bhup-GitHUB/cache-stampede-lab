@@ -1,0 +1,121 @@
+# sample_seconds 2.001011913
+# scrape_started_at 2026-10-09T16:29:59.724404108Z
+# replica http://app1:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:29:59.724411983Z
+# replica_scrape_finished_at 2026-10-09T16:29:59.724614236Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app1",mode="naive"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.001"} 1324
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.005"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.01"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.025"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.05"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.1"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.2"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.4"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="0.8"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="1.6"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="3.2"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="6.4"} 1333
+stampede_duration_seconds_bucket{instance="app1",mode="naive",operation="http",le="+Inf"} 1333
+stampede_duration_seconds_sum{instance="app1",mode="naive",operation="http"} 0.07341853399999998
+stampede_duration_seconds_count{instance="app1",mode="naive",operation="http"} 1333
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app1",kind="cache",mode="naive",outcome="hit"} 1333
+stampede_events_total{instance="app1",kind="http",mode="naive",outcome="200"} 1333
+# replica http://app2:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:29:59.724620861Z
+# replica_scrape_finished_at 2026-10-09T16:29:59.724803363Z
+# HELP stampede_active Active operations
+# TYPE stampede_active gauge
+stampede_active{instance="app2",mode="naive",operation="db_query"} 0
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app2",mode="naive"} 1
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.001"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.005"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.01"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.025"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.05"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.1"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.2"} 0
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="db_query",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app2",mode="naive",operation="db_query"} 0.205928019
+stampede_duration_seconds_count{instance="app2",mode="naive",operation="db_query"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.001"} 1325
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.005"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.01"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.025"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.05"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.1"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.2"} 1334
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.4"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="0.8"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="1.6"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="3.2"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="6.4"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="http",le="+Inf"} 1335
+stampede_duration_seconds_sum{instance="app2",mode="naive",operation="http"} 0.28785519699999956
+stampede_duration_seconds_count{instance="app2",mode="naive",operation="http"} 1335
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.001"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.005"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.01"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.025"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.05"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.1"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="0.8"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="1.6"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="3.2"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="6.4"} 1
+stampede_duration_seconds_bucket{instance="app2",mode="naive",operation="pool_wait",le="+Inf"} 1
+stampede_duration_seconds_sum{instance="app2",mode="naive",operation="pool_wait"} 0.00058855
+stampede_duration_seconds_count{instance="app2",mode="naive",operation="pool_wait"} 1
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app2",kind="cache",mode="naive",outcome="hit"} 1334
+stampede_events_total{instance="app2",kind="cache",mode="naive",outcome="miss"} 1
+stampede_events_total{instance="app2",kind="db_query",mode="naive",outcome="completed"} 1
+stampede_events_total{instance="app2",kind="db_query",mode="naive",outcome="started"} 1
+stampede_events_total{instance="app2",kind="http",mode="naive",outcome="200"} 1335
+stampede_events_total{instance="app2",kind="refresh",mode="naive",outcome="owner"} 1
+# replica http://app3:8080/metrics
+# replica_scrape_started_at 2026-10-09T16:29:59.72481303Z
+# replica_scrape_finished_at 2026-10-09T16:29:59.72496399Z
+# HELP stampede_db_query_starts_total Actual PostgreSQL query starts
+# TYPE stampede_db_query_starts_total counter
+stampede_db_query_starts_total{instance="app3",mode="naive"} 0
+# HELP stampede_duration_seconds Operation durations
+# TYPE stampede_duration_seconds histogram
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.001"} 1326
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.005"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.01"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.025"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.05"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.1"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.2"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.4"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="0.8"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="1.6"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="3.2"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="6.4"} 1335
+stampede_duration_seconds_bucket{instance="app3",mode="naive",operation="http",le="+Inf"} 1335
+stampede_duration_seconds_sum{instance="app3",mode="naive",operation="http"} 0.07286008199999996
+stampede_duration_seconds_count{instance="app3",mode="naive",operation="http"} 1335
+# HELP stampede_events_total Service events by kind and outcome
+# TYPE stampede_events_total counter
+stampede_events_total{instance="app3",kind="cache",mode="naive",outcome="hit"} 1335
+stampede_events_total{instance="app3",kind="http",mode="naive",outcome="200"} 1335
+# scrape_finished_at 2026-10-09T16:29:59.724968574Z
